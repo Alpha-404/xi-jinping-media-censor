@@ -8,7 +8,10 @@ while (true) {
     console.log("media censored haha");
     for(var i=0; i<document.images.length; i++) {
         if (document.images[i].src == link) {continue;}
-        document.images[i].setAttribute("style", `height:${document.images[i].height}px; width:${document.images[i].width}px; object-fit:cover; content:url(${link}); opacity:1; -moz-opacity:1; filter:alpha(opacity=100)`);
+        document.images[i].style["object-fit"] = "cover";
+        document.images[i].style["opacity"] = 1;
+        document.images[i].style["-moz-opacity"] = 1;
+        document.images[i].style["filter"] = "alpha(opacity=100))";
         document.images[i].src = link;
         document.images[i].style.display = "initial"; 
     }
